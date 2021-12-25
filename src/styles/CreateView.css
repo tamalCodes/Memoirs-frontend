@@ -1,0 +1,15 @@
+.crt_img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.crt_title {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.crt_desc {
+  font-family: "Readex Pro", sans-serif;
+}

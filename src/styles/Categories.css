@@ -1,0 +1,22 @@
+.cat_parent1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.create_blog {
+  margin: 20px 0px;
+  color: rgb(51, 16, 16);
+  font-weight: 600;
+  width: 100%;
+  font-family: "Readex Pro", sans-serif;
+}
+
+#dropdownMenuButton1 {
+  width: 100%;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.cat_items {
+  font-family: "Readex Pro", sans-serif;
+}

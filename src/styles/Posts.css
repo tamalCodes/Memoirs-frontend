@@ -1,0 +1,15 @@
+.posts_parent1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.post_link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post_link:hover {
+  color: inherit;
+}

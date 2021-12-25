@@ -1,0 +1,23 @@
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.card-subtitle {
+  font-family: "Readex Pro", sans-serif;
+}
+
+.card-text {
+  font-family: "Readex Pro", sans-serif;
+}
+
+sub {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 0.8rem;
+}

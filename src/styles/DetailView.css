@@ -1,0 +1,49 @@
+.det_img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.icons {
+  float: right;
+  height: 2rem;
+  width: 2rem;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.det_title {
+  text-align: center;
+  margin: 50px 0 10px 0;
+  font-size: 2.4rem;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.tags_parent {
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info_parent {
+  margin-top: 30px;
+  font-family: "Readex Pro", sans-serif;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 425px) {
+  .det_tag {
+    text-align: center;
+  }
+  .det_date {
+    text-align: center;
+  }
+  .tags_parent {
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+}

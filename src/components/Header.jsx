@@ -1,6 +1,7 @@
 import React from 'react'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import "../styles/Header.css"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -14,7 +15,7 @@ const Header = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" href="/">Home</a>
+                                <Link to={'/'}><a class="nav-link active" href="/" >Home</a></Link>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="/">About</a>
@@ -23,6 +24,7 @@ const Header = () => {
                             <li class="nav-item">
                                 <a class="nav-link active" href="/"> <PersonOutlineOutlinedIcon /> </a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
