@@ -1,0 +1,21 @@
+.Banner_parent1 {
+  background-image: url("https://i.ibb.co/DfPg5kL/vadim-sherbakov-Rcd-V8rn-XSe-E-unsplash.jpg");
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+}
+
+.parent1_header1 {
+  display: inline-block;
+  margin: auto;
+  font-family: "Shizuru", cursive;
+  background-color: aliceblue;
+  color: black;
+  font-weight: 600;
+  font-size: 3rem;
+}
