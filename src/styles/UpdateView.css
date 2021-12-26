@@ -3,7 +3,15 @@
   height: 50vh;
   object-fit: cover;
 }
-
+.up_title_parent {
+  display: flex;
+  justify-content: space-between;
+}
+.up_addIcon {
+  width: 10rem;
+  height: 10vh;
+  margin-top: 15px;
+}
 .up_title {
   font-family: "Readex Pro", sans-serif;
   font-size: 2rem;

@@ -1,3 +1,5 @@
+//* This is a single Post , for now it is hardcoded later on we will be using API to fetch the notes' data
+
 import React from 'react'
 import "../../styles/Post.css"
 

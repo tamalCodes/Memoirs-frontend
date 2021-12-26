@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../styles/UpdateView.css"
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ImageTwoToneIcon from '@mui/icons-material/ImageTwoTone';
 
 const UpdateView = () => {
     return (
@@ -11,9 +11,9 @@ const UpdateView = () => {
 
             <div className="container crt_parent2">
                 <form className='up_form'>
-                    <div class="mb-3">
-
-                        <input type="text" class="form-control up_title" aria-describedby="emailHelp" placeholder='Title' />
+                    <div class="mb-3 up_title_parent">
+                        <ImageTwoToneIcon className='up_addIcon' />
+                        <input type="text" class="form-control crt_title" aria-describedby="emailHelp" placeholder='Title' />
 
                     </div>
                     <div class="mb-3">

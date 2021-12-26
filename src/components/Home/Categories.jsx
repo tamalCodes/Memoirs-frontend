@@ -1,3 +1,5 @@
+//* This is the categories dropdown and buttons on the left of the homepage
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../styles/Categories.css"

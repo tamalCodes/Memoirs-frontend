@@ -1,3 +1,5 @@
+//* This is the picture banner on the home screen
+
 import React from 'react'
 import "../../styles/Banner.css"
 const Banner = () => {

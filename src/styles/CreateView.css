@@ -4,10 +4,21 @@
   object-fit: cover;
 }
 
+.crt_title_parent {
+  display: flex;
+  justify-content: space-between;
+}
+.crt_addIcon {
+  width: 10vw;
+  height: 10vh;
+  margin-top: 15px;
+  cursor: pointer;
+}
 .crt_title {
   font-family: "Readex Pro", sans-serif;
   font-size: 2rem;
   font-weight: 600;
+  margin-left: 20px;
 }
 
 .crt_desc {
