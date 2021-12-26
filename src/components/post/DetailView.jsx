@@ -2,6 +2,7 @@ import React from 'react'
 import "../../styles/DetailView.css"
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import { Link } from 'react-router-dom';
 
 const DetailView = () => {
     return (
@@ -11,7 +12,7 @@ const DetailView = () => {
 
                 <div className="container-fluid icons_parent">
                     <DeleteTwoToneIcon className='icons' style={{ color: "red", border: "1px solid red" }} />
-                    <EditTwoToneIcon className='icons' style={{ color: "blue", border: "1px solid blue" }} />
+                    <Link to={'/update'}><EditTwoToneIcon className='icons' style={{ color: "blue", border: "1px solid blue" }} /></Link>
                 </div>
 
                 <h1 className='det_title'>Title</h1>

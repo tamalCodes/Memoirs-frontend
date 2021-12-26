@@ -6,12 +6,11 @@
 
 .icons {
   float: right;
-  height: 2rem;
-  width: 2rem;
   margin: 5px;
   padding: 5px;
   border-radius: 7px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .det_title {

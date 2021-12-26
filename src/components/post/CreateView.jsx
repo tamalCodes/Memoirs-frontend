@@ -9,20 +9,23 @@ const CreateView = () => {
                 <img className='crt_img' src="https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="create" />
             </div>
 
-            <form>
-                <div class="mb-3">
+            <div className="container crt_parent2">
+                <form className='crt_form'>
+                    <div class="mb-3">
 
-                    <input type="text" class="form-control crt_title" aria-describedby="emailHelp" placeholder='Title' />
+                        <input type="text" class="form-control crt_title" aria-describedby="emailHelp" placeholder='Title' />
 
-                </div>
-                <div class="mb-3">
+                    </div>
+                    <div class="mb-3">
 
-                    <input type="text" class="form-control crt_desc" aria-describedby="emailHelp" placeholder='Tell your story' />
+                        <textarea class="form-control crt_desc" id="exampleFormControlTextarea1" rows="3" placeholder='Tell your story . . . '></textarea>
 
-                </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary crt_button">Publish</button>
+                </form>
+            </div>
         </>
     )
 }
