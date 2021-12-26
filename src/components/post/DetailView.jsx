@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../../styles/DetailView.css"
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { getSinglePost } from '../../service/Api';
+import { useLocation } from "react-router-dom";
 
 const DetailView = () => {
+
+    //* Usestate to store the data
+    const [post, setpost] = useState({})
+
+    //* uselocation hooks to get the blog's ID
+    const location = useLocation();
+    const from = location.state;
+
+    //* async function to call the getSinglepost function which in turn calls the API
+    const displayPost = async (req, res) => {
+        const blog_id = from.from;
+        let data = await getSinglePost(blog_id);
+        setpost(data)
+        console.log(data);
+    }
+
+    //* Useeffect to display the values once
+    useEffect(() => {
+        displayPost();
+    }, []);
+
     return (
         <>
             <div className="container">
@@ -15,16 +39,16 @@ const DetailView = () => {
                     <Link to={'/update'}><EditTwoToneIcon className='icons' style={{ color: "blue", border: "1px solid blue" }} /></Link>
                 </div>
 
-                <h1 className='det_title'>Title</h1>
+                <h1 className='det_title'> {post.title} </h1>
 
                 <div className="container-fluid tags_parent">
-                    <h6 className="card-subtitle mb-2 text-muted det_tag"># music</h6>
+                    <h6 className="card-subtitle mb-2 text-muted det_tag"># {post.categories}</h6>
                     <h6 className="card-subtitle mb-2 text-muted det_date">25th December, 2021</h6>
 
                 </div>
 
                 <div className="container-fluid info_parent" >
-                    <p className="det_desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <p className="det_desc">{post.description}</p>
                 </div>
             </div>
         </>
