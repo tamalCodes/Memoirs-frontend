@@ -36,14 +36,14 @@ const DetailView = () => {
 
                 <div className="container-fluid icons_parent">
                     <DeleteTwoToneIcon className='icons' style={{ color: "red", border: "1px solid red" }} />
-                    <Link to={'/update'}><EditTwoToneIcon className='icons' style={{ color: "blue", border: "1px solid blue" }} /></Link>
+                    <Link to={`/update/${post._id}`} state={{ from: `${post._id}` }}><EditTwoToneIcon className='icons' style={{ color: "blue", border: "1px solid blue" }} /></Link>
                 </div>
 
                 <h1 className='det_title'> {post.title} </h1>
 
                 <div className="container-fluid tags_parent">
-                    <h6 className="card-subtitle mb-2 text-muted det_tag"># {post.categories}</h6>
-                    <h6 className="card-subtitle mb-2 text-muted det_date">25th December, 2021</h6>
+                    <h6 className="card-subtitle mb-2 text-muted det_tag">Blog by {post.username}</h6>
+                    <h6 className="card-subtitle mb-2 text-muted det_date">{new Date(post.date).toDateString()} </h6>
 
                 </div>
 

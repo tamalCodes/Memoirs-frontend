@@ -5,7 +5,8 @@ import Axios from "axios";
 
 const CRT_URL = "http://localhost:5000/create";
 const READ_URL = "http://localhost:5000/getallposts";
-const POST_URL = "http://localhost:5000/post";
+const SINGLE_POST_URL = "http://localhost:5000/post";
+const EDIT_URL = "http://localhost:5000/edit";
 
 //^ `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 //* Axios call to create a post
@@ -49,8 +50,25 @@ export const getallPosts = async () => {
 
 export const getSinglePost = async (id) => {
   try {
-    const post = await Axios.get(` http://localhost:5000/post/${id}`);
+    const post = await Axios.get(` ${SINGLE_POST_URL}/${id}`);
     return post.data;
+  } catch (error) {
+    console.log(error);
+    alert("INTERNAL ERROR, PLEASE TRY AGAIN LATER");
+  }
+};
+
+//^ `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+//* Axios call to edit a single post
+//* We get the id and post from updateView.jsx
+//* Then we simply pass those values via AXIOS API call
+
+export const editPost = async (id, post) => {
+  try {
+    const editedPost = await Axios.post(`${EDIT_URL}/${id}`, post);
+    if (editedPost.data.sucess) {
+      alert("EDITED");
+    }
   } catch (error) {
     console.log(error);
     alert("INTERNAL ERROR, PLEASE TRY AGAIN LATER");
