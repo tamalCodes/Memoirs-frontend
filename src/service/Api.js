@@ -7,6 +7,7 @@ const CRT_URL = "http://localhost:5000/create";
 const READ_URL = "http://localhost:5000/getallposts";
 const SINGLE_POST_URL = "http://localhost:5000/post";
 const EDIT_URL = "http://localhost:5000/edit";
+const DEL_URL = "http://localhost:5000/delete";
 
 //^ `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 //* Axios call to create a post
@@ -68,6 +69,24 @@ export const editPost = async (id, post) => {
     const editedPost = await Axios.post(`${EDIT_URL}/${id}`, post);
     if (editedPost.data.sucess) {
       alert("EDITED");
+    }
+  } catch (error) {
+    console.log(error);
+    alert("INTERNAL ERROR, PLEASE TRY AGAIN LATER");
+  }
+};
+
+//^ `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+//* Axios call to delete a post
+//* We get the id from updateView.jsx
+//* Then we simply pass those values via AXIOS API call
+
+export const deletePost = async (id) => {
+  try {
+    const deletedPost = await Axios.delete(`${DEL_URL}/${id}`);
+
+    if (deletedPost.data.sucess) {
+      alert("DELETED");
     }
   } catch (error) {
     console.log(error);

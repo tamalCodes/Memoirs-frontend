@@ -26,7 +26,7 @@ const Posts = () => {
 
         <div className="posts_parent1 container-fluid">
             {allposts.map(post => (
-                <Link className='post_link' to={`/details/${post._id}`} state={{ from: `${post._id}` }}><Post post={post} key={post._id} /></Link>
+                <Link className='post_link' to={`/details/${post._id}`} state={{ from: `${post._id}` }}     ><Post post={post} /></Link>
             ))}
 
         </div>

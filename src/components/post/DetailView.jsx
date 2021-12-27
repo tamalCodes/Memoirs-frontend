@@ -2,12 +2,14 @@ import React, { useEffect } from 'react'
 import "../../styles/DetailView.css"
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { getSinglePost } from '../../service/Api';
+import { deletePost, getSinglePost } from '../../service/Api';
 import { useLocation } from "react-router-dom";
 
 const DetailView = () => {
+
+    const navigate = useNavigate();
 
     //* Usestate to store the data
     const [post, setpost] = useState({})
@@ -29,13 +31,21 @@ const DetailView = () => {
         displayPost();
     }, []);
 
+    //* handleDelete function to delete a post
+    const handleDelete = async (e) => {
+        e.preventDefault();
+        const blog_id = from.from;
+        await deletePost(blog_id);
+        navigate("/");
+    }
+
     return (
         <>
             <div className="container">
                 <img className='det_img' src="https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="banner" />
 
                 <div className="container-fluid icons_parent">
-                    <DeleteTwoToneIcon className='icons' style={{ color: "red", border: "1px solid red" }} />
+                    <DeleteTwoToneIcon className='icons' style={{ color: "red", border: "1px solid red" }} onClick={handleDelete} />
                     <Link to={`/update/${post._id}`} state={{ from: `${post._id}` }}><EditTwoToneIcon className='icons' style={{ color: "blue", border: "1px solid blue" }} /></Link>
                 </div>
 
