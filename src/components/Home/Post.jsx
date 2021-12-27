@@ -12,17 +12,17 @@ const Post = ({ post }) => {
         <>
 
 
-            <div className="card" style={{ width: "18rem", margin: "10px 5px", textAlign: "center" }}>
+            <div className="card" style={{ maxWidth: "18rem", margin: "10px 5px", }}>
                 <img class="card-img-top" src={pic_url} alt="ran" />
 
-                <div class="card-body">
-                    <div className="card-body">
-                        <h5 className="card-title">{post.title} </h5>
-                        <h6 className="card-subtitle mb-2 text-muted"># {post.categories} </h6>
-                        <p className="card-text"> {post.description} </p>
+                <div className="card-body" >
+                    <h5 className="card-title">{post.title} </h5>
+                    <h6 className="card-subtitle mb-2 text-muted" style={{ textAlign: "center" }}># {post.categories} </h6>
+                    <div className="card-text text-truncate">{post.description}</div>
+                    {/* <p className="card-text text-truncate "> { </p> */}
 
-                        <sub>Author: {post.username}</sub>
-                    </div>
+                    <h6 className="card-subtitle mb-2 text-muted" style={{ textAlign: "center", marginTop: "20px", fontSize: "0.8rem" }}>Author: {post.username} </h6>
+                    <sub></sub>
                 </div>
             </div>
 

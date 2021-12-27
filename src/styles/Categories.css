@@ -20,3 +20,8 @@
 .cat_items {
   font-family: "Readex Pro", sans-serif;
 }
+
+.cat_link {
+  color: black;
+  text-decoration: none;
+}

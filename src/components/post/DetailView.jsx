@@ -52,7 +52,7 @@ const DetailView = () => {
                 <h1 className='det_title'> {post.title} </h1>
 
                 <div className="container-fluid tags_parent">
-                    <h6 className="card-subtitle mb-2 text-muted det_tag">Blog by {post.username}</h6>
+                    <h6 className="card-subtitle mb-2 text-muted det_tag">Blog by <Link to={`/?username=${post.username}`}>{post.username}</Link> </h6>
                     <h6 className="card-subtitle mb-2 text-muted det_date">{new Date(post.date).toDateString()} </h6>
 
                 </div>

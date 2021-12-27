@@ -34,9 +34,9 @@ export const createPost = async (post) => {
 //* Here we fetch all the posts from the DB and return it
 //* This will called in Posts.jsx to map and display all the notes
 
-export const getallPosts = async () => {
+export const getallPosts = async (param) => {
   try {
-    const Allposts = await Axios.get(` ${READ_URL}`);
+    const Allposts = await Axios.get(` ${READ_URL}${param}`);
     return Allposts.data;
   } catch (error) {
     console.log(error);

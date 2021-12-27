@@ -4,23 +4,26 @@
 import React, { useEffect, useState } from 'react'
 import Post from './Post'
 import "../../styles/Posts.css"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getallPosts } from '../../service/Api';
 
 const Posts = () => {
+
+    const { search } = useLocation();
+
     //* USestate hook to store all the values so that they can be mapped once
     const [allposts, setallposts] = useState([]);
 
     //* Async function to call the getallposts function which was imported earlier
     const fetchData = async () => {
-        const fetchedData = await getallPosts();
+        const fetchedData = await getallPosts(search);
         setallposts(fetchedData);
     }
 
     //* Useffect hook to display all the notes once
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [search]);
 
     return (
 

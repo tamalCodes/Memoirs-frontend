@@ -16,8 +16,9 @@ const Categories = () => {
                         Catagories
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li className='dropdown-item cat_items'> <Link to={'/'} className='cat_link'> all</Link> </li>
                         {blog_cat.map(category => (
-                            <li className='dropdown-item cat_items'>{category} </li>
+                            <li className='dropdown-item cat_items'> <Link to={`/?category=${category}`} className='cat_link'> {category}</Link> </li>
                         ))}
 
                     </ul>

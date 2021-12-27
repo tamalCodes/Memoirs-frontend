@@ -8,7 +8,7 @@ import { createPost } from '../../service/Api';
 
 const CreateView = () => {
 
-    const initialValues = { title: "", description: "", picture: "", username: "tamal", categories: "all", date: new Date() }
+    const initialValues = { title: "", description: "", picture: "", username: "rahul", categories: "Tech", date: new Date() }
 
     //* useState to store and update the values
     const [post, setPost] = useState(initialValues);
