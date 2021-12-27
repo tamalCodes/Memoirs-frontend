@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react'
 import "../../styles/UpdateView.css"
 import ImageTwoToneIcon from '@mui/icons-material/ImageTwoTone';
 import { useLocation } from 'react-router-dom';
-import { editPost, getSinglePost } from '../../service/Api';
+import { editPost, getSinglePost, uploadFile } from '../../service/Api';
 
 const UpdateView = () => {
 
@@ -29,6 +29,9 @@ const UpdateView = () => {
         createdDate: new Date()
     }
     const [post, setPost] = useState(initialPost);
+    const [file, setFile] = useState('');
+    const [image, setImage] = useState('');
+
 
     //* async function to call the getSinglepost function which in turn calls the API
     //* After we get the original data we set our data with the data we have got with the help of names and values
@@ -36,20 +39,44 @@ const UpdateView = () => {
     const displayPost = async (req, res) => {
         const blog_id = from.from;
         let data = await getSinglePost(blog_id);
-        console.log(data)
         setPost(data)
-        console.log(post)
+
     }
+
+    const img_url = post.picture ? post.picture : "https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
 
     //* Useeffect to display the values once to be edited
     useEffect(() => {
         displayPost();
+
     }, []);
+
+
+    //* Useeffect to call API when image is changed
+    useEffect(() => {
+        const getImage = async () => {
+            if (file) {
+                const data = new FormData();
+                data.append("name", file.name);
+                data.append("file", file);
+                const image = await uploadFile(data);
+                post.picture = image;
+                setImage(image);
+            }
+        }
+        getImage();
+        // post.categories = location.search?.split('=')[1] || 'All'
+        // post.username = account;
+    }, [file])
 
     const handleChange = (e) => {
         setPost({ ...post, [e.target.name]: e.target.value });
     }
 
+    //* Image selection
+    const handleImage = (e) => {
+        setFile(e.target.files[0])
+    }
 
     //* handleUpdate function
     //* we pass the ID and newly edited data to the API function
@@ -60,13 +87,15 @@ const UpdateView = () => {
     return (
         <>
             <div className="container">
-                <img className='up_img' src="https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="create" />
+                <img className='up_img' src={img_url} alt="create" />
             </div>
 
             <div className="container crt_parent2">
                 <form className='up_form'>
                     <div className="mb-3 up_title_parent">
-                        <ImageTwoToneIcon className='up_addIcon' />
+
+                        <label htmlFor="fileInput"> <ImageTwoToneIcon className='up_addIcon' /></label>
+                        <input type="file" name="fileInput" id="fileInput" className='d-none' onChange={handleImage} />
                         <input type="text" className="form-control crt_title" aria-describedby="emailHelp" placeholder='Title' value={post.title} name='title' onChange={handleChange} />
 
                     </div>

@@ -4,6 +4,7 @@
 import Axios from "axios";
 
 const CRT_URL = "http://localhost:5000/create";
+const IMG_URL = "http://localhost:5000/uploadfile";
 const READ_URL = "http://localhost:5000/getallposts";
 const SINGLE_POST_URL = "http://localhost:5000/post";
 const EDIT_URL = "http://localhost:5000/edit";
@@ -23,6 +24,22 @@ export const createPost = async (post) => {
     } else {
       alert("Blog creation failed");
     }
+  } catch (error) {
+    console.log(error);
+    alert("INTERNAL ERROR, PLEASE TRY AGAIN LATER");
+  }
+};
+
+//^ `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+//* Axios call to upload the image for the post
+//* This will return the URL of that image
+//* First it will ping the /uploadfile route in the backend and give the data
+//* the data basically consists of the file info
+
+export const uploadFile = async (data) => {
+  try {
+    const uploadedImage = await Axios.post(`${IMG_URL}`, data);
+    return uploadedImage.data.imageUrl;
   } catch (error) {
     console.log(error);
     alert("INTERNAL ERROR, PLEASE TRY AGAIN LATER");

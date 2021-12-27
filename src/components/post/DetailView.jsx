@@ -23,8 +23,9 @@ const DetailView = () => {
         const blog_id = from.from;
         let data = await getSinglePost(blog_id);
         setpost(data)
-        console.log(data);
     }
+
+    const img_url = post.picture ? post.picture : "https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
 
     //* Useeffect to display the values once
     useEffect(() => {
@@ -42,7 +43,7 @@ const DetailView = () => {
     return (
         <>
             <div className="container">
-                <img className='det_img' src="https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="banner" />
+                <img className='det_img' src={img_url} alt="banner" />
 
                 <div className="container-fluid icons_parent">
                     <DeleteTwoToneIcon className='icons' style={{ color: "red", border: "1px solid red" }} onClick={handleDelete} />
