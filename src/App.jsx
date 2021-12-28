@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './components/Header'
-import Home from './components/home/Home'
+import Home from './components/Home/Home'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DetailView from './components/post/DetailView';
 import CreateView from './components/post/CreateView';

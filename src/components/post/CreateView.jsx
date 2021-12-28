@@ -5,8 +5,10 @@ import React, { useEffect, useState } from 'react'
 import "../../styles/CreateView.css"
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { createPost, uploadFile } from '../../service/Api';
+import { useNavigate } from 'react-router-dom';
 
 const CreateView = () => {
+    const navigate = useNavigate();
 
     const initialValues = { title: "", description: "", picture: "", username: "rahul", categories: "Tech", date: new Date() }
 
@@ -26,6 +28,7 @@ const CreateView = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await createPost(post);
+        navigate("/");
     }
 
     //* Image selection

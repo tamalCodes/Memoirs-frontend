@@ -12,7 +12,7 @@ const Post = ({ post }) => {
         <>
 
 
-            <div className="card" style={{ maxWidth: "18rem", margin: "10px 5px", }}>
+            <div className="card" style={{ width: "18rem", margin: "10px 5px", }}>
                 <img class="card-img-top" src={pic_url} alt="ran" />
 
                 <div className="card-body" >

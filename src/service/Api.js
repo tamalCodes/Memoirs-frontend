@@ -3,12 +3,21 @@
 
 import Axios from "axios";
 
-const CRT_URL = "http://localhost:5000/create";
-const IMG_URL = "http://localhost:5000/uploadfile";
-const READ_URL = "http://localhost:5000/getallposts";
-const SINGLE_POST_URL = "http://localhost:5000/post";
-const EDIT_URL = "http://localhost:5000/edit";
-const DEL_URL = "http://localhost:5000/delete";
+import {
+  CRT_URL,
+  IMG_URL,
+  READ_URL,
+  SINGLE_POST_URL,
+  EDIT_URL,
+  DEL_URL,
+} from "../Constants";
+
+// const CRT_URL = "http://localhost:5000/create";
+// const IMG_URL = "http://localhost:5000/uploadfile";
+// const READ_URL = "http://localhost:5000/getallposts";
+// const SINGLE_POST_URL = "http://localhost:5000/post";
+// const EDIT_URL = "http://localhost:5000/edit";
+// const DEL_URL = "http://localhost:5000/delete";
 
 //^ `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 //* Axios call to create a post
