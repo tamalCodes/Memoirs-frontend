@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Memoirs 📖 - Create your memories
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is Memoirs ? 🙄
 
-## Available Scripts
+⭐ Memoirs is a fullstack web application , it uses **ReactJs** in the frontend and in the backend it uses **MongoDB, NodeJs and ExpressJs** . <br> <br>
+⭐ It is a place where you can store and share your memories in form of blogs along with pictures. You can also give categories to your blog if you fancy to. You can also edit or delete your blogs. <br>
 
-In the project directory, you can run:
+⭐ We also used **Multer** along with **GridFS** storage to store the image to the **MongoDB** database and show it to the user. <br>
 
-### `npm start`
+⭐ The blogs can also be sorted via Categories such as Music, tech, fashion etc. You can also view a particular user's blog by clicking on their names.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Why I made this project ? 👩🏻‍💻
 
-### `npm test`
+⭐ **BACK TO THE BASICS** : This web app uses MERN stack and has the CRUD (Create, Read, Update, Delete) functionality, these functionalities are used in all apps but in different scales, so it really helped me have a good grasp of the basics. <br> <br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## The To-Do list 📝
 
-### `npm run build`
+⭐ **USER AUTHENTICATION** : I will soon be adding an User Authentication with the help of **JWT or Firebase**. We already have the functionality to view a particular user's blog so it will be easy enough.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+⭐ **FILE STRUCTURE** : The files are not currently structured or Organised , i'll do it once done with my exams and all. <br> <br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to use the code ? 💻
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It's easy enough, just follow the steps :
 
-### `npm run eject`
+👉🏻 `Fork` this repo to your own profile
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👉🏻 `git clone <repo_url>` to clone your forked repo into local system
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👉🏻 `npm install` to add the dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👉🏻 `npm start` to start the Application
