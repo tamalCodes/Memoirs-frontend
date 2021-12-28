@@ -1,6 +1,9 @@
 # Memoirs 📖 - Create your memories
 
+![memoirs](https://user-images.githubusercontent.com/72851613/147533738-823924a8-44f6-48cb-95b2-f061048fc50f.png)
+
 ## What is Memoirs ? 🙄
+
 
 ⭐ Memoirs is a fullstack web application , it uses **ReactJs** in the frontend and in the backend it uses **MongoDB, NodeJs and ExpressJs** . <br> <br>
 ⭐ It is a place where you can store and share your memories in form of blogs along with pictures. You can also give categories to your blog if you fancy to. You can also edit or delete your blogs. <br>
@@ -32,3 +35,5 @@ It's easy enough, just follow the steps :
 👉🏻 `npm install` to add the dependencies
 
 👉🏻 `npm start` to start the Application
+
+### Link to backend: https://github.com/IAmTamal/memoirs-backend
